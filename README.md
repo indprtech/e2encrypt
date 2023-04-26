@@ -13,4 +13,4 @@ This is early development version. I am currently considering:
 - [ ] Secure-Admin Feature
 - [X] Requests Class
 
-### The Documentation is Not Yet Build Due to It's not being Complete
+### [Beta Docs](https://prtechs-organization.gitbook.io/e2encrypt-frame-php/)
