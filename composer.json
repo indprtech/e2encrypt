@@ -1,0 +1,16 @@
+{
+    "name": "prtech/e2encrypt",
+    "description": "e2encrypt End-To-End Encrypted Framework",
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "dev-main"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "PRTECHIND",
+            "email": "indprtech@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
