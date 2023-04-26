@@ -69,14 +69,14 @@ class Database extends Core{
         }
     }
 
-    public function edit($table,$id,$data){
+    public function edit($table,$array,$data){
         $query = "UPDATE `$table` SET ";
         foreach ($data as $field => $value) {
             $query .= "`$field` = '" . mysqli_real_escape_string($this->db, $value) . "', ";
         }
 
         $query = rtrim($query, ", ");
-        $query .= " WHERE id = '$id';";
+        $query .= " WHERE ".$array['row']." = '".$array['id']."';";
 
         try{
             $queryExec = mysqli_query($this->db,$query);
