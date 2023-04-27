@@ -11,7 +11,7 @@ class Routes{
         ),
         '/api/test' => array(
             'controller' => "Welcome",
-            'route' => "apiTest"
+            'route' => "debugTest"
         )
     ];
 }

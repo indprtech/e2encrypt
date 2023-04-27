@@ -22,6 +22,12 @@
             <h5>Tests</h5>
             <p>GET [hi] : <?php echo $this->get('hi'); ?></p>
             <p>GET md5 hash of value to set in url, for example hash of hi is ?<?=md5('hi')?>=hi</p>
+
+            <form action="/api/test" method="post" enctype="multipart/form-data">
+                Select image to upload:
+                <input type="file" name="file" id="file">
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
         </div>
     </div>
 </body>

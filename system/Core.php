@@ -36,26 +36,32 @@ class Core {
                 }else{
                     $this->showError("Null Value Parsed on Core->library on [parse1]");
                 }
-            }else if($this->isNull($parse0) == false){
+            }else{
+                $this->showError("Null Value Parsed on Core->library [parse0]");
+            }
+        }
+
+        if($library == "file"){
+            if($this->isNull($parse0) == false){
                 if($this->isNull($parse1) == false){
-                    require_once(__DIR__ . "/Request.php");
+                    require_once(__DIR__ . "/File.php");
                     if($parse0 !== []){
-                        $Request = new Request($parse0);
+                        $File = new File($parse0);
                     }else if($parse1 !== []){
-                        $Request = new Request(true , $parse1);
+                        $File = new File(true , $parse1);
                     }else{
                         if($parse0 !== []){
                             if($parse1 !== []){
-                                $Request = new Request($parse0,$parse1);
+                                $File = new File($parse0,$parse1);
                             }else{
-                                $Request = new Request($parse0);
+                                $File = new File($parse0);
                             }
                         }else{
-                            $Request = new Request();
+                            $File = new File();
                         }
                     }
                     
-                    return $Database;
+                    return $File;
                 }else{
                     $this->showError("Null Value Parsed on Core->library on [parse1]");
                 }
