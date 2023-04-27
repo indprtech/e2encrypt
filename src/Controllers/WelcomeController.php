@@ -7,6 +7,6 @@ class Welcome extends Controller{
     }
 
     public function apiTest(){
-        echo $this->Response('JSON' , ['status' => true, 'message' => "You've Successfully Saw the API!"]);
+        $this->Response('XML' , ['status' => true, 'message' => "You've Successfully Saw the API!"]);
     }
 }

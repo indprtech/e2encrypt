@@ -18,4 +18,6 @@ class Config {
     public $encryption = true;
     // TODO: Change the Secret Key for Producional USE!
     public $secret_key = "1234@1345";
+    //Secure Admin Access
+    public $secure_admin_enabled = FALSE;
 }
