@@ -98,6 +98,35 @@ class Core {
                 $this->showError("Null Value Parsed on Core->library [parse0]");
             }
         }
+
+        if($library == "biscuit"){
+            if($this->isNull($parse0) == false){
+                if($this->isNull($parse1) == false){
+                    require_once(__DIR__ . "/Libraries/Biscuit.php");
+                    if($parse0 !== []){
+                        $Biscuit = new Biscuit($parse0);
+                    }else if($parse1 !== []){
+                        $Biscuit = new Biscuit(true , $parse1);
+                    }else{
+                        if($parse0 !== []){
+                            if($parse1 !== []){
+                                $Biscuit = new Biscuit($parse0,$parse1);
+                            }else{
+                                $Biscuit = new Biscuit($parse0);
+                            }
+                        }else{
+                            $Biscuit = new Biscuit();
+                        }
+                    }
+                    
+                    return $Biscuit;
+                }else{
+                    $this->showError("Null Value Parsed on Core->library on [parse1]");
+                }
+            }else{
+                $this->showError("Null Value Parsed on Core->library [parse0]");
+            }
+        }
     }
 
     // Null-Safety (Currently Disabled)
@@ -169,8 +198,31 @@ class Core {
     }
 
     public function showError($message){
-        echo "<style>body{background: black ;color:white;} div{ padding:25px; margin:25px; border-radius:20px; border:2px solid red; }</style>";
-        echo "<div>$message</div>";
+        include(__DIR__ . "/Views/error.view.php");
         exit(-4);
+    }
+
+    public function showTests(){
+        include(__DIR__ . "/Views/tests.view.php");
+        exit(-4);
+    }
+
+    public function get_client_ip() {
+        $ipaddress = '';
+        if (isset($_SERVER['HTTP_CLIENT_IP']))
+            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        else if(isset($_SERVER['HTTP_X_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        else if(isset($_SERVER['HTTP_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        else if(isset($_SERVER['REMOTE_ADDR']))
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+        else
+            $ipaddress = 'UNKNOWN';
+        return $ipaddress;
     }
 }

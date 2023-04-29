@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Welcome to e2encrypt Framework</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Error 500 - Internal Server Error</title>
 	<style>
 		body {
 			background-color: #f9f9f9;
@@ -53,9 +53,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome to e2encrypt Framework</h1>
-		<p>Congratulations! You have successfully installed and configured e2encrypt framework.</p>
-		<p>You can now start building your web application with ease using e2encrypt's powerful features & libraries.</p>
+		<h1>Error 500 - Internal Server Error</h1>
+		<p><?=$message?></p>
+		<a href="javascript:window.location.reload()" class="btn">Reload</a>
 	</div>
 </body>
 </html>

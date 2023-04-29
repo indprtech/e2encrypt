@@ -12,7 +12,7 @@ This is early development version. I am currently considering:
 - [X] Views
 - [ ] Secure-Admin Feature
 - [X] Requests Class
-- [ ] Clean Welcome & Error Pages
+- [x] (Partial) Clean Welcome & Error Pages
 - [ ] File Managment
 - [ ] MongoDB Support
 - [X] Sqlite3 Support
