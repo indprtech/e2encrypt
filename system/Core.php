@@ -69,6 +69,35 @@ class Core {
                 $this->showError("Null Value Parsed on Core->library [parse0]");
             }
         }
+
+        if($library == "sqlite3"){
+            if($this->isNull($parse0) == false){
+                if($this->isNull($parse1) == false){
+                    require_once(__DIR__ . "/Libraries/Sqlite3.php");
+                    if($parse0 !== []){
+                        $Database = new Sqlite3Database($parse0);
+                    }else if($parse1 !== []){
+                        $Database = new Sqlite3Database(true , $parse1);
+                    }else{
+                        if($parse0 !== []){
+                            if($parse1 !== []){
+                                $Database = new Sqlite3Database($parse0,$parse1);
+                            }else{
+                                $Database = new Sqlite3Database($parse0);
+                            }
+                        }else{
+                            $Database = new Sqlite3Database();
+                        }
+                    }
+                    
+                    return $Database;
+                }else{
+                    $this->showError("Null Value Parsed on Core->library on [parse1]");
+                }
+            }else{
+                $this->showError("Null Value Parsed on Core->library [parse0]");
+            }
+        }
     }
 
     // Null-Safety (Currently Disabled)

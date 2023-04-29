@@ -15,7 +15,7 @@ This is early development version. I am currently considering:
 - [ ] Clean Welcome & Error Pages
 - [ ] File Managment
 - [ ] MongoDB Support
-- [ ] Sqlite3 Support
+- [X] Sqlite3 Support
 - [ ] Better Debugging
 - [ ] Routes With Arguments Like /product/:id
 - [ ] More User Configurments

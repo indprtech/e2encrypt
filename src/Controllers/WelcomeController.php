@@ -2,8 +2,10 @@
 class Welcome extends Controller{
     public $defaultController = "index";
     public $file;
+    public $db;
     function __construct(){
         $this->file = $this->library("file");
+        $this->db = $this->library("sqlite3");
     }
 
     public function index(){
@@ -11,12 +13,8 @@ class Welcome extends Controller{
     }
 
     public function debugTest(){
-        $this->file->setFileName("test.test");
-        $this->file->setUploadPath("/");
-        $this->file->setAllowedFileTypes(["jpg","test","png"]);
-        $this->file->setMaxSize(50000);
-        $this->file->setField("file");
-        print_r($this->file->upload());
+        $k = $this->db->delete("COMPANY","ID",4);
+        print_r($k);
     }
 
     public function apiTest(){
