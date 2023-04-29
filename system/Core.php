@@ -1,12 +1,12 @@
 <?php
-include(__DIR__ . "/Config.php");
-include(__DIR__ . "/Request.php");
-include(__DIR__ . "/Controller.php");
+include(__DIR__ . "/User/Config.php");
+include(__DIR__ . "/Libraries/Request.php");
+include(__DIR__ . "/Libraries/Controller.php");
 class Core {
 
     /* Config Loading (Important for Most Libraries) */
     public function loadConfig(){
-        require_once(__DIR__ . "/Config.php");
+        require_once(__DIR__ . "/User/Config.php");
         $config = new Config();
         return $config;
     }
@@ -15,7 +15,7 @@ class Core {
         if($library == "db"){
             if($this->isNull($parse0) == false){
                 if($this->isNull($parse1) == false){
-                    require_once(__DIR__ . "/Database.php");
+                    require_once(__DIR__ . "/Libraries/Database.php");
                     if($parse0 !== []){
                         $Database = new Database($parse0);
                     }else if($parse1 !== []){
@@ -44,7 +44,7 @@ class Core {
         if($library == "file"){
             if($this->isNull($parse0) == false){
                 if($this->isNull($parse1) == false){
-                    require_once(__DIR__ . "/File.php");
+                    require_once(__DIR__ . "/Libraries/File.php");
                     if($parse0 !== []){
                         $File = new File($parse0);
                     }else if($parse1 !== []){
