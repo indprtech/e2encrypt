@@ -8,10 +8,6 @@ class Routes{
         '/' => array(
             'controller' => "Welcome",
             'route' => "index"
-        ),
-        '/api/test' => array(
-            'controller' => "Welcome",
-            'route' => "debugTest"
         )
     ];
 }

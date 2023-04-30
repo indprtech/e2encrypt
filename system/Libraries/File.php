@@ -52,7 +52,7 @@ class File extends Core{
 
         if($error == FALSE){
             $pathNew = $this->uploadPath;
-            $target_dir = __DIR__ . "/../$pathNew/";
+            $target_dir = __DIR__ . "/../../$pathNew/";
             $target_file = $target_dir . basename($_FILES[$this->field]["name"]);
             $new_file = $target_dir . basename($this->fileName);
             $FileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

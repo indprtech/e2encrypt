@@ -14,6 +14,8 @@ class Config {
         'dbase' => 'test'
     );
 
+    public $sqlite_db = __DIR__ . "/../../file_tests/data.db";
+
     //Encryption
     public $encryption = true;
     // TODO: Change the Secret Key for Producional USE!
