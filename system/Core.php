@@ -204,7 +204,7 @@ class Core {
 
     public function showTests(){
         include(__DIR__ . "/Views/tests.view.php");
-        exit(-4);
+        exit(-6);
     }
 
     public function get_client_ip() {
