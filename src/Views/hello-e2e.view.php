@@ -53,7 +53,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome to e2encrypt Framework</h1>
+		<h1>Welcome to e2encrypt Framework <?=$test?></h1>
 		<p>Congratulations! You have successfully installed and configured e2encrypt framework.</p>
 		<p>You can now start building your web application with ease using e2encrypt's powerful features & libraries.</p>
 	</div>

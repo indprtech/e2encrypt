@@ -40,18 +40,23 @@ class Request extends Core{
         }
     }
 
-    public function Response($type , $data){
+    public function Response($type , $data , $parseText = []){
         if($type == "json" || $type == "JSON"){
             header("Content-type: application/json");
             if($this->isEncryptionEnabled == FALSE){
-                return json_encode($data);
+                echo json_encode($data);
             }else{
                 $jwt = JWT::encode($data, $this->loadConfig()->secret_key, 'HS256');
-                return $jwt;
+                echo $jwt;
             }
         }else if($type == "xml" || $type == "XML"){
             header("Content-type: text/xml");
             $this->xml_encode($data); 
+        }else if($type == "views" || $type == "VIEWS"){
+            foreach($parseText as $index => $value){
+                $$index = $value;
+            }
+            include(__DIR__ . "/../../src/Views/$data.view.php");
         }
     }
 

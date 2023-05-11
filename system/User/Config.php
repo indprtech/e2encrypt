@@ -1,7 +1,7 @@
 <?php
 class Config {
     //Domain
-    public $domain = "localhost:8000";
+    public $domain = "localhost:8001";
     public $base_url = "http://localhost:8000";
     public $requireSSL = FALSE;
     public $same_domain = FALSE;
